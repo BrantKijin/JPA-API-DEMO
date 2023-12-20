@@ -11,13 +11,3 @@ services:
       TZ: "Asia/Seoul"
     restart: always
     container_name: XPRODB_postgres
-    volumes:
-      - xprodb-volume:/var/lib/postgresql/data
-      - ./backup/xprodb.sql:/docker-entrypoint-initdb.d/xprodb.sql
-volumes:
-  xprodb-volume:
-    driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '/Volumes/development/docker/xprodb'
