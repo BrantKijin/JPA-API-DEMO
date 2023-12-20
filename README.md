@@ -9,7 +9,7 @@
 |---|------|---|---|
 | XPRODB | 5501 | XADMIN | XADMIN |
 
-* resources -> sql 의 각 DB 별로 초기 데모데이터를 넣어준다 
+* backup 폴더-> xprodb.sql 의 초기 데모데이터를 넣어준다 
 
 ## 2. API TEST
  
