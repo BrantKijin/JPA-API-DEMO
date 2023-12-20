@@ -27,4 +27,14 @@ public class TdgInfoController {
 		}
 		return ApiResponse.success(tdgInfoService.findAptCd(aptCd));
 	}
+
+	@GetMapping("/v1/tdginfo/querydsl")
+	public ApiResponse getQuerydslInstallStatus(
+		@RequestParam(value = "aptCd") String aptCd
+	) {
+		if(StringUtils.isNullOrEmpty(aptCd)){
+			aptCd = "99999";
+		}
+		return ApiResponse.success(tdgInfoService.findQueryDslAptCd(aptCd));
+	}
 }

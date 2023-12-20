@@ -19,4 +19,11 @@ public class TdgInfoServiceImpl implements TdgInfoService{
 		return TdgInfoResponse.from(byAptCd);
 
 	}
+
+	@Override
+	public TdgInfoResponse findQueryDslAptCd(String aptCd) {
+		TdgInfo byQueryDslAptCd = tdgInfoRepository.findByQueryDslAptCd(aptCd);
+
+		return TdgInfoResponse.from(byQueryDslAptCd);
+	}
 }

@@ -16,7 +16,24 @@
 
 ````
 aptCd 를 DB 에 유효한 아파트 코드 조회시 정상 호출
+JPA 테스트 URL 
 http://localhost:8888/api/v1/tdginfo?aptCd=99999  
+
+{
+    "status": "SUCCESS",
+    "message": null,
+    "data": {
+        "aptCd": "99999",
+        "aptNm": "테스트",
+        "aptOutputNm": null,
+        "aptForm": "7",
+        "aptNoNum": 4,
+        "householdNum": 322
+    }
+}
+
+QueryDSl 테스트 URL 
+http://localhost:8888/api/v1/tdginfo/querydsl?aptCd=99999
 
 {
     "status": "SUCCESS",
