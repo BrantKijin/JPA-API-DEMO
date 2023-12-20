@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  XPRODB:
+    image: postgres:latest
+    ports:
+      - "5501:5432"
+    environment:
+      POSTGRES_USER: XADMIN
+      POSTGRES_PASSWORD: XADMIN
+      POSTGRES_DB: XPRODB
+      TZ: "Asia/Seoul"
+    restart: always
+    container_name: XPRODB_postgres
+    volumes:
+      - xprodb-volume:/var/lib/postgresql/data
+      - ./backup/xprodb.sql:/docker-entrypoint-initdb.d/xprodb.sql
+volumes:
+  xprodb-volume:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Volumes/development/docker/xprodb'
